@@ -1,10 +1,17 @@
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
+    document.addEventListener('DOMContentLoaded', () => {
+    feather.replace();
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             feather.replace();
         });
+    }
+
+});
 
         const contactForm = document.getElementById('contact-form');
         const successMessage = document.getElementById('success-message');
@@ -95,6 +102,9 @@
                 easing: 'easeOutExpo'
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
             
 
             anime({
@@ -120,6 +130,7 @@
                     easing: 'easeOutExpo'
                 });
             });
+        });
 
         document.addEventListener('DOMContentLoaded', () => {
             feather.replace();
@@ -202,6 +213,10 @@
             document.getElementById('modal-description').textContent = description;
             modal.classList.remove('hidden');
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+            
             anime.timeline({
                 easing: 'easeOutExpo',
             })
@@ -235,6 +250,7 @@
                 delay: anime.stagger(200),
                 easing: 'easeOutExpo'
             });
+        });
 
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
