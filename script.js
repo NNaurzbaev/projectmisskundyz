@@ -1,4 +1,4 @@
-const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
         mobileMenuButton.addEventListener('click', () => {
@@ -95,9 +95,6 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
                 easing: 'easeOutExpo'
             });
         });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            feather.replace();
             
 
             anime({
@@ -123,7 +120,6 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
                     easing: 'easeOutExpo'
                 });
             });
-        });
 
         document.addEventListener('DOMContentLoaded', () => {
             feather.replace();
@@ -206,10 +202,6 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
             document.getElementById('modal-description').textContent = description;
             modal.classList.remove('hidden');
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            feather.replace();
-            
             anime.timeline({
                 easing: 'easeOutExpo',
             })
@@ -243,7 +235,6 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
                 delay: anime.stagger(200),
                 easing: 'easeOutExpo'
             });
-        });
 
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
