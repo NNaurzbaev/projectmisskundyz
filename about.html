@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtLens Gallery | About</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+        .gold-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #D4AF37;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .gold-underline:hover::after {
+            transform: scaleX(1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #D4AF37;
+            border: 3px solid white;
+        }
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+        .stat-item:hover .stat-number {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="font-montserrat bg-white text-gray-800">
+
+    <nav class="bg-black text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-playfair font-bold text-gold-500">
+                    ArtLens <span class="text-gold-500">Gallery</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="gold-underline">Home</a>
+                    <a href="gallery.html" class="gold-underline">Gallery</a>
+                    <a href="about.html" class="gold-underline text-gold-500">About</a>
+                    <a href="contact.html" class="gold-underline">Contact</a>
+                </div>
+                
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Home</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Gallery</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-6">Our Story</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">A journey through art, vision, and connection.</p>
+        </div>
+    </section>
+
+
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
+                <div class="lg:w-1/2">
+                    <img src="http://static.photos/office/640x360/1" alt="Gallery Interior" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-playfair font-bold mb-6">Our Vision</h2>
+                    <p class="text-lg mb-6">Founded in 2015 by art enthusiasts Clara Bennett and David Rosenthal, ArtLens Gallery emerged from a shared passion for making contemporary art accessible to everyone.</p>
+                    <p class="text-lg mb-6">We believe art should be an experience, a conversation starter, and a mirror to society's evolving cultural landscape. Our mission is to bridge the gap between artists and art lovers, creating meaningful connections through curated exhibitions and educational programs.</p>
+                    <p class="text-lg">Today, we represent over 50 emerging and established artists from around the world, with a focus on innovative techniques and thought-provoking concepts.</p>
+                </div>
+            </div>
+            
+
+            <div class="mb-20">
+                <h2 class="text-3xl font-playfair font-bold mb-12 text-center">Our Journey</h2>
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="absolute h-full w-0.5 bg-gray-200 left-0 lg:left-1/2 transform lg:-translate-x-1/2"></div>
+                    
+
+                    <div class="mb-12 lg:flex lg:justify-between lg:items-center">
+                        <div class="lg:w-5/12 lg:pr-8 lg:text-right mb-4 lg:mb-0">
+                            <h4 class="text-xl font-playfair font-bold">2015</h4>
+                            <p class="text-sm text-gray-500">The Beginning</p>
+                        </div>
+                        <div class="lg:w-1/12 flex justify-center">
+                            <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center text-white">
+                                <i data-feather="flag"></i>
+                            </div>
+                        </div>
+                        <div class="lg:w-5/12 lg:pl-8 relative timeline-item">
+                            <h4 class="text-xl font-playfair font-bold mb-2">Gallery Founded</h4>
+                            <p class="text-gray-700">Clara and David open a small gallery space in downtown Manhattan, hosting their first exhibition featuring local artists.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="mb-12 lg:flex lg:flex-row-reverse lg:justify-between lg:items-center">
+                        <div class="lg:w-5/12 lg:pl-8 mb-4 lg:mb-0">
+                            <h4 class="text-xl font-playfair font-bold">2017</h4>
+                            <p class="text-sm text-gray-500">Expansion</p>
+                        </div>
+                        <div class="lg:w-1/12 flex justify-center">
+                            <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center text-white">
+                                <i data-feather="home"></i>
+                            </div>
+                        </div>
+                        <div class="lg:w-5/12 lg:pr-8 lg:text-right relative timeline-item">
+                            <h4 class="text-xl font-playfair font-bold mb-2">New Location</h4>
+                            <p class="text-gray-700">Moving to a larger space on Art Avenue, allowing for multiple concurrent exhibitions and artist residencies.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="mb-12 lg:flex lg:justify-between lg:items-center">
+                        <div class="lg:w-5/12 lg:pr-8 lg:text-right mb-4 lg:mb-0">
+                            <h4 class="text-xl font-playfair font-bold">2019</h4>
+                            <p class="text-sm text-gray-500">Recognition</p>
+                        </div>
+                        <div class="lg:w-1/12 flex justify-center">
+                            <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center text-white">
+                                <i data-feather="award"></i>
+                            </div>
+                        </div>
+                        <div class="lg:w-5/12 lg:pl-8 relative timeline-item">
+                            <h4 class="text-xl font-playfair font-bold mb-2">Art Excellence Award</h4>
+                            <p class="text-gray-700">Received the NYC Art Excellence Award for our innovative "Art in Motion" interactive exhibition series.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="mb-12 lg:flex lg:flex-row-reverse lg:justify-between lg:items-center">
+                        <div class="lg:w-5/12 lg:pl-8 mb-4 lg:mb-0">
+                            <h4 class="text-xl font-playfair font-bold">2021</h4>
+                            <p class="text-sm text-gray-500">Innovation</p>
+                        </div>
+                        <div class="lg:w-1/12 flex justify-center">
+                            <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center text-white">
+                                <i data-feather="globe"></i>
+                            </div>
+                        </div>
+                        <div class="lg:w-5/12 lg:pr-8 lg:text-right relative timeline-item">
+                            <h4 class="text-xl font-playfair font-bold mb-2">Digital Platform</h4>
+                            <p class="text-gray-700">Launched our online gallery and virtual exhibition platform, expanding our reach to international collectors.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="lg:flex lg:justify-between lg:items-center">
+                        <div class="lg:w-5/12 lg:pr-8 lg:text-right mb-4 lg:mb-0">
+                            <h4 class="text-xl font-playfair font-bold">2023</h4>
+                            <p class="text-sm text-gray-500">Today</p>
+                        </div>
+                        <div class="lg:w-1/12 flex justify-center">
+                            <div class="w-8 h-8 bg-gold-500 rounded-full flex items-center justify-center text-white">
+                                <i data-feather="star"></i>
+                            </div>
+                        </div>
+                        <div class="lg:w-5/12 lg:pl-8 relative timeline-item">
+                            <h4 class="text-xl font-playfair font-bold mb-2">ArtLens Today</h4>
+                            <p class="text-gray-700">Now representing over 50 artists worldwide with an annual program of 12 exhibitions and numerous community events.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+                <div class="stat-item text-center p-6 border border-gray-200 rounded-lg transition-colors">
+                    <div class="text-4xl font-playfair font-bold mb-2 stat-number">8</div>
+                    <p class="text-gray-600">Years</p>
+                </div>
+                <div class="stat-item text-center p-6 border border-gray-200 rounded-lg transition-colors">
+                    <div class="text-4xl font-playfair font-bold mb-2 stat-number">50+</div>
+                    <p class="text-gray-600">Artists</p>
+                </div>
+                <div class="stat-item text-center p-6 border border-gray-200 rounded-lg transition-colors">
+                    <div class="text-4xl font-playfair font-bold mb-2 stat-number">120</div>
+                    <p class="text-gray-600">Exhibitions</p>
+                </div>
+                <div class="stat-item text-center p-6 border border-gray-200 rounded-lg transition-colors">
+                    <div class="text-4xl font-playfair font-bold mb-2 stat-number">2500+</div>
+                    <p class="text-gray-600">Artworks</p>
+                </div>
+            </div>
+            
+
+            <div>
+                <h2 class="text-3xl font-playfair font-bold mb-12 text-center">Meet Our Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:shadow-xl">
+                        <div class="overflow-hidden h-64">
+                            <img src="http://static.photos/people/640x360/4" alt="Clara Bennett" class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-playfair font-bold mb-2">Clara Bennett</h3>
+                            <p class="text-gold-500 mb-4">Co-Founder & Director</p>
+                            <p class="text-gray-700 mb-4">With a background in art history and curation, Clara brings a keen eye for emerging talent and innovative concepts.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-500 hover:text-gold-500"><i data-feather="mail"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-gold-500"><i data-feather="instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:shadow-xl">
+                        <div class="overflow-hidden h-64">
+                            <img src="http://static.photos/people/640x360/5" alt="David Rosenthal" class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-playfair font-bold mb-2">David Rosenthal</h3>
+                            <p class="text-gold-500 mb-4">Co-Founder & Creative Director</p>
+                            <p class="text-gray-700 mb-4">Artist and designer David oversees exhibition design and the gallery's visual identity, ensuring each show is a unique experience.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-500 hover:text-gold-500"><i data-feather="mail"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-gold-500"><i data-feather="twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:shadow-xl">
+                        <div class="overflow-hidden h-64">
+                            <img src="http://static.photos/people/640x360/6" alt="Maya Chen" class="w-full h-full object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-playfair font-bold mb-2">Maya Chen</h3>
+                            <p class="text-gold-500 mb-4">Gallery Manager</p>
+                            <p class="text-gray-700 mb-4">With a decade of gallery experience, Maya coordinates exhibitions, artist relations, and our international art fairs program.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-500 hover:text-gold-500"><i data-feather="mail"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-gold-500"><i data-feather="linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-6">Become Part of Our Story</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Whether you're an artist looking for representation or an art lover wanting to join our community, we'd love to hear from you.</p>
+            <a href="contact.html" class="bg-gold-500 hover:bg-gold-600 text-black font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Get In Touch</a>
+        </div>
+    </section>
+
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">ArtLens Gallery</h3>
+                    <p>Celebrating artistic vision since 2015.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="gallery.html" class="hover:text-gold-400 transition">Gallery</a></li>
+                        <li><a href="about.html" class="hover:text-gold-400 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Visit</h4>
+                    <p>123 Art Avenue<br>New York, NY 10001</p>
+                    <p class="mt-2">Wed-Sun: 11AM - 7PM</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="twitter"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="youtube"></i></a>
+                    </div>
+                    <p class="mt-4">info@artlensgallery.com<br>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2023 ArtLens Gallery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>

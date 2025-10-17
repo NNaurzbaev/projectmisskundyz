@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtLens Gallery | Gallery</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+        .gold-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #D4AF37;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .gold-underline:hover::after {
+            transform: scaleX(1);
+        }
+        .artwork-item {
+            transition: all 0.3s ease;
+        }
+        .artwork-item:hover {
+            transform: translateY(-5px);
+        }
+        .category-filter button.active {
+            color: #D4AF37;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="font-montserrat bg-white text-gray-800">
+    <nav class="bg-black text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-playfair font-bold text-gold-500">
+                    ArtLens <span class="text-gold-500">Gallery</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="gold-underline">Home</a>
+                    <a href="gallery.html" class="gold-underline text-gold-500">Gallery</a>
+                    <a href="about.html" class="gold-underline">About</a>
+                    <a href="contact.html" class="gold-underline">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Home</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Gallery</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-6">The Gallery</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Browse our curated collection of contemporary art and photography.</p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="category-filter flex flex-wrap justify-center gap-4 mb-8">
+                <button class="active px-4 py-2 rounded-full" data-category="all">All Works</button>
+                <button class="px-4 py-2 rounded-full" data-category="painting">Paintings</button>
+                <button class="px-4 py-2 rounded-full" data-category="photography">Photography</button>
+                <button class="px-4 py-2 rounded-full" data-category="sculpture">Sculpture</button>
+                <button class="px-4 py-2 rounded-full" data-category="digital">Digital Art</button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="artwork-item" data-category="painting">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/1" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/1', 'Eternal Recurrence', 'Elena Voght, 2023', 'Oil on canvas, 120×90 cm\nThis vibrant abstract explores themes of time and repetition through layered color fields.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">Eternal Recurrence</h3>
+                            <p class="text-gold-500">Elena Voght</p>
+                            <p class="text-gray-600">$4,200</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artwork-item" data-category="photography">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/2" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/2', 'Neon Dreams', 'Marcus Lin, 2023', 'Archival pigment print, 80×120 cm\nCapturing the electric energy of Tokyo nightlife through long exposures.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">Neon Dreams</h3>
+                            <p class="text-gold-500">Marcus Lin</p>
+                            <p class="text-gray-600">$2,800</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artwork-item" data-category="digital">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/3" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/3', 'The Collector', 'Sophie Renard, 2023', 'Mixed media on wood, 100×100 cm\nA surreal exploration of memory and identity in the digital age.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">The Collector</h3>
+                            <p class="text-gold-500">Sophie Renard</p>
+                            <p class="text-gray-600">$3,500</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artwork-item" data-category="painting">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/4" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/4', 'Vermilion Tide', 'Carlos Mendez, 2023', 'Acrylic on canvas, 90×120 cm\nBold gestural strokes evoke the power of the ocean at sunset.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">Vermilion Tide</h3>
+                            <p class="text-gold-500">Carlos Mendez</p>
+                            <p class="text-gray-600">$3,800</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artwork-item" data-category="sculpture">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/5" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/5', 'Equilibrium', 'James Teller, 2023', 'Bronze and marble, 60×40×40 cm\nA study in balance and contrast between materials.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">Equilibrium</h3>
+                            <p class="text-gold-500">James Teller</p>
+                            <p class="text-gray-600">$6,200</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artwork-item" data-category="photography">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/6" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/6', 'Urban Glyphs', 'Aisha Johnson, 2023', 'Archival pigment print, 70×105 cm\nStreet art and architecture merge in this geometric composition.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">Urban Glyphs</h3>
+                            <p class="text-gold-500">Aisha Johnson</p>
+                            <p class="text-gray-600">$2,500</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artwork-item" data-category="digital">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/7" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/7', 'Data Garden', 'Ryan Chen, 2023', 'Digital print on aluminum, 80×80 cm\nAlgorithmically generated flora explores nature in the digital realm.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">Data Garden</h3>
+                            <p class="text-gold-500">Ryan Chen</p>
+                            <p class="text-gray-600">$3,200</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artwork-item" data-category="painting">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="http://static.photos/art/640x360/8" alt="Artwork" class="w-full h-64 object-cover cursor-pointer" 
+                             onclick="openModal('http://static.photos/art/640x360/8', 'Silent Dialogue', 'Mira Patel, 2023', 'Oil and gold leaf on canvas, 100×100 cm\nSubtle textures and metallic accents create a meditative surface.')">
+                        <div class="p-4">
+                            <h3 class="text-xl font-playfair font-bold">Silent Dialogue</h3>
+                            <p class="text-gold-500">Mira Patel</p>
+                            <p class="text-gray-600">$4,500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">ArtLens Gallery</h3>
+                    <p>Celebrating artistic vision since 2015.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="gallery.html" class="hover:text-gold-400 transition">Gallery</a></li>
+                        <li><a href="about.html" class="hover:text-gold-400 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Visit</h4>
+                    <p>123 Art Avenue<br>New York, NY 10001</p>
+                    <p class="mt-2">Wed-Sun: 11AM - 7PM</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="twitter"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-feather="youtube"></i></a>
+                    </div>
+                    <p class="mt-4">info@artlensgallery.com<br>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2023 ArtLens Gallery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="art-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="relative max-w-4xl w-full p-4">
+            <button id="close-modal" class="absolute -top-12 right-0 text-white text-2xl focus:outline-none">
+                <i data-feather="x"></i>
+            </button>
+            <div class="bg-white rounded-lg overflow-hidden">
+                <img id="modal-image" src="" alt="Enlarged artwork" class="w-full h-auto max-h-[70vh] object-contain">
+                <div class="p-6">
+                    <h3 id="modal-title" class="text-2xl font-playfair font-bold"></h3>
+                    <p id="modal-artist" class="text-gold-600"></p>
+                    <p id="modal-description" class="mt-4 whitespace-pre-line"></p>
+                    <button class="mt-6 bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">Inquire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
